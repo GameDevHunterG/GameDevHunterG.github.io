@@ -5,14 +5,22 @@ body{
     font-family: 'Times New Roman', Times, serif;
     color: green;
     font-size: 1.2em;
+    display: grid;
+    grid-template-areas: 'header header header header welcome'
+                         'main main main main welcome'
+                         'main main main main welcome'
+                         'main main main main welcome'
+                         'footer footer footer footer welcome';
+    gap: 2rem;
 }
 main{
     max-width: 1000px;
     padding: 2rem;
     margin-left: auto;
     margin-right: auto;
+    grid-area: main;
 }
-h1, figcaption{
+h1, h2, figcaption{
     text-align: center;
 }
 figure{
@@ -22,4 +30,17 @@ figure{
 }
 figure img{
     border-radius: 25px;
+}
+header{
+    grid-area: header;
+}
+footer{
+    grid-area: footer;
+}
+#welcome{
+    grid-area: welcome;
+    border-left: 5px solid white;
+}
+#welcome h2{
+    margin-top: 5rem;
 }
