@@ -24,3 +24,5 @@ else
 }
 
 welcome.append(message);
+
+localStorage.setItem("It's a secret to everybody.", "Courage need not be remembered, for it is never forgotten.");
