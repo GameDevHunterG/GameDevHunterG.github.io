@@ -67,7 +67,7 @@ setInterval(() => {
 }, 1000)
 
 const todoList = document.querySelector(".todo-list");
-const todoControls = document.querySelector("#to-do-controls");
+const todoControls = document.querySelector("#todo-controls");
 const todoButton = todoControls.querySelector("button");
 const todoInput = todoControls.querySelector("#new-todo");
 const todos = JSON.parse(localStorage.getItem('todo-list')) || [];
