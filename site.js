@@ -88,3 +88,24 @@ todoButton.addEventListener("click", () => {
     renderTodos();
     todoInput.value = "";
 });
+
+const pokemonDiv = document.querySelector("#pokemon");
+const getRandomPokemon = async () => {
+    const numPokemon = 1025;
+    const pokedexNumber = Math.floor((Math.random() * numPokemon) + 1); // the +1 avoids getting 0, which wouldn't work
+    const url = `https://pokeapi.co/api/v2/pokemon/${pokedexNumber}`;
+    const result = await fetch(url);
+    const data = await result.json();
+    return data;
+}
+const renderPokemon = pokemonObj => {
+    const imageURL = pokemonObj.sprites.front_default.toString();
+    const imageAlt = pokemonObj.name;
+
+    const img = document.createElement("img");
+    img.src = imageURL;
+    img.alt = imageAlt;
+    pokemonDiv.append(img);
+}
+
+const pokemon = getRandomPokemon().then(renderPokemon);
